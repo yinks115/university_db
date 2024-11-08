@@ -1,7 +1,7 @@
 #include "Student.h"
 using namespace std;
 
-Student::Student(string name, GRADE grade, string major, int ID){
+Student::Student(string name, GRADE grade, string major, string ID){
 
     m_name = name; m_grade = grade; m_major = major; m_id = ID;
 
@@ -127,6 +127,8 @@ void Student::addClass(string course_id, char letterGrade){
     pair<string, char> toAdd(course_id, letterGrade);
     m_classes.push_back(toAdd);
 
+    //updates the gpa
+    calculateGPA();
     //code below is to make a query to update the data base
 }
 
@@ -137,6 +139,9 @@ void Student::deleteClass(string course_id){
 
         if (itr->first == course_id){
             m_classes.erase(itr);
+
+            //calculates new gpa
+            calculateGPA();
 
             //making a query to delete class from student in the database
 

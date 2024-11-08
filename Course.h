@@ -8,7 +8,7 @@ using namespace std;
 
 class Course {
 public:
-    Course(); // Constructor
+    Course(string, string, int); // Constructor
 
     void displayInfo();
     int getCredits();

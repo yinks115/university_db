@@ -12,9 +12,9 @@ enum GRADE {FRESHMAN, SOPHOMORE, JUNIOR, SENIOR};
 
 class Student {
 public:
-    Student(string name, GRADE grade, string major, int ID);// Constructor
-    Student();
-    ~Student();
+    Student(string name, GRADE grade, string major, string ID);// Constructor
+    //Student();
+    //~Student();
 
     //getters
     void displayInfo();

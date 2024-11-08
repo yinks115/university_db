@@ -1,8 +1,11 @@
 #include "Course.h"
 
-Course::Course(){
+Course::Course(string course_id, string courseName, int numCredits){
 
+    m_id = course_id; m_name = courseName, m_credits = numCredits;
 
+    //makes all the letters in m_name upper case
+    transform(m_name.begin(), m_name.end(), m_name.begin(), ::toupper);
 }
 
 void Course::displayInfo(){
